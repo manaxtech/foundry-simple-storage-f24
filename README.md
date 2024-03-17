@@ -1,66 +1,40 @@
-## Foundry
+# Foundry Solidity Contracts ReadMe
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the repository containing Solidity smart contracts developed with Foundry. These contracts facilitate simple storage and manipulation of data. Below is an overview of each contract included.
 
-Foundry consists of:
+## Contracts
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### 1. SimpleStorage.sol
 
-## Documentation
+This contract provides a basic storage mechanism along with fundamental functionality for data storage and retrieval. It includes:
 
-https://book.getfoundry.sh/
+- Storage of a favorite number (`myFavoriteNumber`) and a list of people (`listOfPeople`) with their favorite numbers.
+- Functions for storing and retrieving favorite numbers, adding people with their favorite numbers, and computing the greatest common factor of two numbers.
+
+### 2. AddFiveStorage.sol
+
+Extending the functionality of `SimpleStorage.sol`, this contract adds five to the stored favorite number upon storage.
+
+### 3. SimpleStorageInterface.sol
+
+An interface defining the structure and functions of the `SimpleStorage` contract, enabling interaction with contracts implementing this interface.
+
+### 4. StorageFactory.sol
+
+This contract serves as a factory for creating instances of `SimpleStorage` contracts. It provides methods for interacting with these contracts using both direct contract access and the interface.
 
 ## Usage
 
-### Build
+To utilize these contracts with Foundry, follow these steps:
 
-```shell
-$ forge build
-```
+1. **Compile**: Compile the Solidity contracts using Foundry's integrated Solidity compiler.
+2. **Deploy**: Deploy the desired contract(s) to the Ethereum blockchain using Foundry's deployment tools.
+3. **Interact**: Interact with the deployed contracts using their respective functions as per your requirements.
 
-### Test
+## Development Environment
 
-```shell
-$ forge test
-```
+Ensure you have Foundry's development environment set up with a compatible Solidity compiler and deployment tool.
 
-### Format
+## License
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+These contracts are licensed under the MIT License. Refer to the individual contract files for details.
